@@ -1,0 +1,33 @@
+---
+title: "Relatório"
+author: "Pedro"
+date: "01/06/2022"
+output: 
+  html_document:
+    css: mystyle.css
+---
+
+```{r setup, include=FALSE}
+library(trend)
+library(Kendall)
+arquivos <- dir(pattern = "resultado")
+df1 <- read.csv(arquivos[1], sep=",", h=T)
+df2 <- read.csv(arquivos[2], sep=",", h=T)
+
+```
+
+## Resultados
+```{r, echo=FALSE}
+writeLines("td, th { padding : 6px } th { background-color : brown ; color : white; border : 1px solid white; } td { color : brown ; border : 1px solid brown }", con = "mystyle.css")
+
+knitr::kable(df1, format = "html")
+
+```
+
+```{r, echo=FALSE}
+writeLines("td, th { padding : 6px } th { background-color : brown ; color : white; border : 1px solid white; } td { color : brown ; border : 1px solid brown }", con = "mystyle.css")
+
+knitr::kable(df2, format = "html")
+
+```
+
