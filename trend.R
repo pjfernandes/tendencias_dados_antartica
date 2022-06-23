@@ -4,7 +4,7 @@ library(imputeTS)
 
 arquivos <- dir(pattern=".txt$")
 
-df<-read.csv(arquivos[2], h=T, sep="\t")
+df<-read.csv(arquivos[1], h=T, sep="\t")
 
 for (col in 1:ncol(df)) {
   if (NA %in% df[, col]) {
